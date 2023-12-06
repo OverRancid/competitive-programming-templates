@@ -4,7 +4,7 @@ using namespace std;       //Explicit Content
 
 template<typename T> class SegmentTree{
 public:
-    void build(vector<T> &arr, int x=0){
+    SegmentTree(vector<T> &arr, int x=0){
         segTree.clear();
         int64_t n = arr.size(), i;
         type = x;
