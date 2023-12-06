@@ -2,16 +2,7 @@
 ## Theory
 [Theory](https://www.geeksforgeeks.org/segment-tree-data-structure/) can only take us so far.
 ## Implementation
- - ### Declatarion
-	Allowed types:
-	 - int types: short, int, long, long long and their unsigned counterparts.
-	 - float types: float, double, long double - only on select queries.
-	 
-```cpp
-    SegmentTree<type_T> var_name;
-    SegmentTree<long long> tree;
-```
-	
+
  - ### Types
 	A segment tree can answer various types of range queries. Various queries have been efficiently implemented. The type of query has to be mentioned when building the tree.
 	
@@ -26,16 +17,20 @@
 	| 5|range AND |
 	| 6|range minimum |
  - ### Constructing
-	 A segment tree can be constructed from a given array in $\Theta(n)$ time and $\Theta(2^{\lceil\log_2{n}\rceil}) \approx \Theta(n)$ space. Once declared, the tree can be constructed as:
+   	A segment tree can be constructed from a given array in $\Theta(n)$ time and $\Theta(2^{\lceil\log_2{n}\rceil}) \approx \Theta(n)$ space. 
+	The list of allowed types are:
+	 - int types: short, int, long, long long and their unsigned counterparts.
+	 - float types: float, double, long double - only on select queries.
+
+
 	```cpp
-	vector<type_T> vec;
-		//initialize vec
-	tree.build(vec);
+ 	SegmentTree<type_T> var_name(vector<T>&arr, int type);
+ 	SegmentTree<long long> tree(vec);
 	```
-	 By default the type is set to 0 - range sum. Other trees can be constructed by passing the corresponding type value.
-	 ```cpp
-	 tree.build(vec, 2); //tree for range xor type queries
-   ```
+	By default the type is set to 0 - range sum. Other trees can be constructed by passing the corresponding type value.
+	```cpp
+	SegmentTree<long long> tree(vec, 2); //tree for range xor type queries
+	```
 - ### Query
 	The ranged query is answered for $[l, r] \subset [0, n-1]$ in $\mathcal{O}(\log{n})$.
 	The function returns the query, without printing anything.
