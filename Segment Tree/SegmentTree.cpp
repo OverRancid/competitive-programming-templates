@@ -1,7 +1,3 @@
-//OverRancid#0590
-#include <bits/stdc++.h>    //Parental Advisory
-using namespace std;       //Explicit Content
-
 template<typename T> class SegmentTree{
 public:
     SegmentTree(vector<T> &arr, int x=0){
